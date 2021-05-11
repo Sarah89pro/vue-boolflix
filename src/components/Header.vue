@@ -5,21 +5,31 @@
       </div>
 
       <div class="right-section">
-          <input type="text" placeholder="Search">
-          <button><i class="fas fa-search"></i></button>
+          <input
+          type="text"
+          placeholder="Search"
+          v-model="getMovie">
+
+          <button
+          @click.prevent="$emit('getMovie', getMovie)">
+          <i class="fas fa-search"></i></button>
       </div>
   </header>
 </template>
 
 <script>
-
 export default {
     name: 'Header',
-
+    data(){
+        return{
+            getMovie: '',
+        }
+    }
 }
 </script>
 
 <style scoped lang="scss">
+
 @import '../styles/vars';
 
 header {
@@ -28,6 +38,8 @@ header {
     height: 80px;
     width: 100%;
     background-color: $black-a;
+    position: fixed;
+    z-index: 1;
 }
 
 
@@ -35,9 +47,12 @@ header {
     width: 170px;
     margin: 10px;
 }
+
+
 .left-section img {
     vertical-align: middle;
 }
+
 
 .right-section {
     display: flex;
@@ -45,6 +60,7 @@ header {
     justify-content: space-between;
     margin:30px 70px;
 }
+
 
 .right-section input {
     margin-right: 10px;
@@ -55,6 +71,7 @@ header {
     border: 0;
     outline: none;
 }
+
 
 input:hover,
 input:focus {
@@ -71,11 +88,11 @@ button {
     position: relative;
 }
 
+
 button i {
     position: absolute;
     top: 8px;
     left: 3px;
 }
-
 
 </style>
