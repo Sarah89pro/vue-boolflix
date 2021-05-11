@@ -7,7 +7,9 @@
         <h4>
             <strong>Titolo originale:</strong>
             {{ movie.original_title !== undefined ? movie.original_title : movie.original_name }}</h4>
-       
+        
+        <img :src="`https://image.tmdb.org/t/p/w185${movie.poster_path}`" alt="movie poster">
+
         <ul>
             <li>
                 <strong>Lingua:</strong>
@@ -22,7 +24,8 @@
                 <span
                 v-else>{{ movie.original_language }}</span>
             </li>
-
+            
+            
         </ul>
     </section>
 </template>
@@ -46,8 +49,8 @@ export default {
 
 
 img {
-    width: 30px;
-    margin-left: 5px;
+        width: 30px;
+        margin-left: 5px;
 }
 
 </style>
