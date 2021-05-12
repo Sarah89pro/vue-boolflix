@@ -1,9 +1,9 @@
 <template>
   <div id="app">
-    <!-- APP HEADER -->
+    <!--Header-->
     <Header @getMovie="getMovie"/>
 
-    <!-- APP MAIN -->
+    <!--Main-->
     <Main :movies="movies" :tv="tvShow"/>
   </div>
 </template>

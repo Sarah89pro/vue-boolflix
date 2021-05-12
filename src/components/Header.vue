@@ -1,10 +1,12 @@
 <template>
   <header>
+      <!--logo-->
       <div class="left-section">
           <img src="@/assets/img/boolflix.png" alt="Boolflix Logo">
       </div>
 
-      <div class="right-section">
+        <!--search-->
+        <div class="right-section">
           <input
           type="text"
           placeholder="Search"
@@ -13,7 +15,8 @@
           <button
           @click.prevent="$emit('getMovie', getMovie)">
           <i class="fas fa-search"></i></button>
-      </div>
+        </div>
+
   </header>
 </template>
 
