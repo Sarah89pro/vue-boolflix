@@ -3,25 +3,24 @@
 <section class="box">
     <div class="poster">
         <!--Poster-->
-        <img v-if="type.poster_path" :src="`https://img.tmdb.org/t/p/w342${type.poster_path}`" alt="movie poster">
+        <img v-if="type.poster_path" :src="`https://image.tmdb.org/t/p/w342${type.poster_path}`" alt="movie poster">
         <img class="unavailable" v-else src="@/assets/img/noposter.png" alt="poster unavailable">
     </div>
 
     <!--Details-->
     <div>
-        <!--title-->
-        <h4>
-            <strong>Titolo:</strong>
-            {{ type.title !== undefined ? type.title : type.name }}
-        </h4>
-            
-        <h4>
-            <strong>Titolo originale:</strong>
-            {{ type.original_title !== undefined ? type.original_title : type.original_name }}
-        </h4>
-
-        <!--langs-->
+        <!-- title and langs-->
         <ul>
+            <li>
+                <strong>Titolo:</strong>
+                {{ type.title !== undefined ? type.title : type.name }}
+            </li>
+            
+            <li>
+                <strong>Titolo originale:</strong>
+                {{ type.original_title !== undefined ? type.original_title : type.original_name }}
+            </li>
+
             <li>
                 <strong>Lingua:</strong>
                    <img
